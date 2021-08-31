@@ -1,0 +1,10 @@
+package com.test.user.service.repositories;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.test.user.service.models.User;
+
+public interface UserRepository extends CrudRepository<User, Long> {
+	
+	User findByEmail(String email);
+}

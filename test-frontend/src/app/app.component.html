@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>TEST APP</h3>
+      <strong>SP</strong>
+    </div>
+
+    <ul class="list-unstyled components">
+      <li>
+        <a [routerLink]="['']">
+          <i class="fas fa-home"></i>
+          Create user
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['user-list']">
+          <i class="fas fa-home"></i>
+          User list
+        </a>
+      </li>
+      <li></li>
+    </ul>
+  </nav>
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

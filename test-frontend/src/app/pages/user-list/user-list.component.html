@@ -1,0 +1,45 @@
+<div class="component-body d-flex flex-column align-items-center">
+  <div class="logsDiv d-flex flex-column">
+    <div
+      *ngFor="let user of users$ | async"
+      class="log-box box d-flex flex-column"
+    >
+      <div class="d-flex logItem">
+        <div class="log-label">Id :</div>
+        <div class="log-font">{{ user.id }}</div>
+      </div>
+      <div class="d-flex logItem">
+        <div class="log-label">First name :</div>
+        <div class="log-font">{{ user.firstName }}</div>
+      </div>
+      <div class="d-flex logItem">
+        <div class="log-label">Last name :</div>
+        <div class="log-font">{{ user.lastName }}</div>
+      </div>
+      <div class="d-flex logItem">
+        <div class="log-label">Email :</div>
+        <div class="log-font">{{ user.email }}</div>
+      </div>
+      <div class="d-flex logItem">
+        <div class="log-label">Location :</div>
+        <div class="log-font">{{ user.location }}</div>
+      </div>
+      <div class="d-flex logItem">
+        <div class="log-label">Role :</div>
+        <div class="log-font">{{ user.role }}</div>
+      </div>
+      <div class="d-flex logItem justify-content-end">
+        <button class="btn btn-danger" (click)="onDeleteUser(user)">
+          Delete
+        </button>
+      </div>
+      <div
+        class="alert alert-success"
+        role="alert"
+        *ngIf="deletedUserId === user.id"
+      >
+        <h4 class="alert-heading">Successfully deleted user</h4>
+      </div>
+    </div>
+  </div>
+</div>
